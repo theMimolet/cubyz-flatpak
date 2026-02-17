@@ -35,13 +35,10 @@ jobs:
               run: |
                   flatpak-builder --repo=repo build-dir io.github.pixelguys.Cubyz.yaml
 
-            - name: Update repo summary
-              run: |
-                  flatpak build-update-repo --generate-static-deltas repo
-
             - name: Upload repo to gh-pages
               uses: peaceiris/actions-gh-pages@v4
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_branch: gh-pages
                   publish_dir: repo
+                  force_orphan: true
