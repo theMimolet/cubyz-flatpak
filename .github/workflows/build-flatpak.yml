@@ -1,0 +1,43 @@
+name: Build and Publish Flatpak
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v4
+
+            - name: Install Flatpak tools
+              run: |
+                  sudo apt update
+                  sudo apt install -y flatpak flatpak-builder
+
+            - name: Install Freedesktop SDK
+              run: |
+                  sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+                  sudo flatpak install -y flathub org.freedesktop.Sdk//25.08 org.freedesktop.Platform//25.08
+
+            - name: Build Flatpak
+              run: |
+                  flatpak-builder --repo=repo build-dir io.github.pixelguys.Cubyz.yaml
+
+            - name: Upload repo to gh-pages
+              uses: peaceiris/actions-gh-pages@v4
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_branch: gh-pages
+                  publish_dir: repo

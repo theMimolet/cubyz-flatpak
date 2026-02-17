@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.pixelguys.Cubyz</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <name>Cubyz</name>
+  <summary>3D voxel sandbox game</summary>
+  <developer id="io.github.pixelguys">
+    <name translate="no">The Pixel Guys</name>
+  </developer>
+  <description>
+    <p>
+      **NOTE: This wrapper is not verified by, affiliated with, or supported by The Pixel Guys.**
+    </p>
+    <p>
+      Welcome to Cubyz !
+    </p>
+    <p>
+      An open-world adventure game where creativity knows no bounds! Explore, build, and shape your
+      own world in this open source project.
+    </p>
+    <p>It has a bunch of interesting/unique features such as: <ul>
+        <li>
+          Unique Gameplay → Experience a one-of-a-kind gameplay that combines creativity and
+      strategy.
+        </li>
+        <li>Level of Detail → This enables far view distances.</li>
+        <li>
+          Cubic Chunks → Explore a world built from cubic chunks, allowing for infinite
+          exploration in all directions.
+        </li>
+        <li>
+          Procedural Crafting → You can craft anything you want, and the game will figure out
+          what kind of tool you tried to make.
+        </li>
+      </ul>
+    </p>
+  </description>
+  <url type="homepage">https://cubyz.net/</url>
+  <url type="bugtracker">https://github.com/PixelGuys/Cubyz/issues</url>
+  <launchable type="desktop-id">io.github.pixelguys.Cubyz.desktop</launchable>
+  <content_rating type="oars-1.1" />
+  <screenshots>
+    <screenshot type="default">
+      <caption>Sight of a growling volcano</caption>
+      <image type="source">https://cubyz.net/gallery/Screenshot_20251016_191225.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <caption>Example of extra biomes found in the world</caption>
+      <image type="source">https://cubyz.net/gallery/extrabiomes_01.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <caption>Example of extra biomes found in the world</caption>
+      <image type="source">https://cubyz.net/gallery/Screenshot_at_2025-10-23_17-07-31.png</image>
+    </screenshot>
+  </screenshots>
+  <icon type="remote" height="448" width="448">https://cubyz.net/cubyz_logo.png</icon>
+  <releases>
+    <release date="2026-01-01" version="0.1.1">
+      <url type="details">https://github.com/PixelGuys/Cubyz/releases/tag/0.1.1</url>
+      <description>
+        Fixed world creation bug that wrote the incorrect values for allowing cheats and the
+        default gamemode.
+      </description>
+    </release>
+    <release date="2025-12-31" version="0.1.0">
+      <url type="details">https://github.com/PixelGuys/Cubyz/releases/tag/0.1.0</url>
+      <description>
+        <ul>
+          <li>Leaf and branch decay</li>
+          <li>Many new and improved biomes and blocks</li>
+          <li>Headless server</li>
+          <li>Configurable night brightness</li>
+        </ul>
+      </description>
+    </release>
+    <release date="2025-11-08" version="0.1.0">
+      <url type="details">https://github.com/PixelGuys/Cubyz/releases/tag/0.0.1</url>
+    </release>
+    <release date="2025-10-05" version="0.0.0">
+      <url type="details">https://github.com/PixelGuys/Cubyz/releases/tag/0.0.0</url>
+    </release>
+  </releases>
+  <recommends>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <display_length compare="ge">768</display_length>
+  </recommends>
+</component>

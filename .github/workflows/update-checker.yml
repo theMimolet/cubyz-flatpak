@@ -1,0 +1,28 @@
+name: Check for updates
+
+on:
+  schedule:
+  - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  check-updates:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install flatpak-external-data-checker
+      run: |
+        pip install flatpak-external-data-checker
+    
+    - name: Check for updates
+      run: |
+        flatpak-external-data-checker --update io.github.pixelguys.Cubyz.yaml
+    
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        commit-message: 'Update to latest upstream release'
+        title: 'Update Cubyz to latest version'
+        body: 'Automated update check found new version'
+        branch: update-bot

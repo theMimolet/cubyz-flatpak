@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Cubyz
+GenericName=Game
+Comment=Open-world adventure game where creativity knows no bounds!
+Exec=cubyz
+Terminal=false
+MimeType=text/plain;
+Icon=io.github.pixelguys.Cubyz
+Categories=Game;AdventureGame;
+StartupNotify=true
+StartupWMClass=cubyz
+X-KDE-StartupWMClass=cubyz
