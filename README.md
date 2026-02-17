@@ -14,7 +14,7 @@ It can be taken down at any time if there are any issues with it existing.
 Here are the commands to install it :
 ```sh
 # Add the repository
-flatpak remote-add --user --no-gpg-verify cubyz-flatpak https://themimolet.github.io/cubyz-flatpak/
+flatpak remote-add --user --no-gpg-verify cubyz-flatpak https://raw.githack.com/theMimolet/cubyz-flatpak/gh-pages/
 
 # Install Cubyz
 flatpak install cubyz-flatpak io.github.pixelguys.Cubyz

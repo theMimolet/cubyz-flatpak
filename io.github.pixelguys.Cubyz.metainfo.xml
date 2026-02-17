@@ -59,8 +59,12 @@
     <release date="2026-01-01" version="0.1.1">
       <url type="details">https://github.com/PixelGuys/Cubyz/releases/tag/0.1.1</url>
       <description>
-        Fixed world creation bug that wrote the incorrect values for allowing cheats and the
-        default gamemode.
+        <ul>
+          <li>
+            Fixed world creation bug that wrote the incorrect values for allowing cheats and the
+            default gamemode.
+          </li>
+        </ul>
       </description>
     </release>
     <release date="2025-12-31" version="0.1.0">

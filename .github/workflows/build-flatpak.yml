@@ -33,7 +33,7 @@ jobs:
 
             - name: Build Flatpak
               run: |
-                  flatpak-builder --repo=repo build-dir io.github.pixelguys.Cubyz.yaml
+                  flatpak-builder --force-clean --repo=repo build-dir io.github.pixelguys.Cubyz.yaml
 
             - name: Upload repo to gh-pages
               uses: peaceiris/actions-gh-pages@v4
