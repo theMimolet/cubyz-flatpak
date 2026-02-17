@@ -7,7 +7,7 @@ Unofficial Flatpak packaging of [Cubyz](https://github.com/PixelGuys/Cubyz), an 
 
 ## Installation
 
-This repo is still experimental and may change at any time.
+This repo is still experimental and is not perfect in any way.
 
 It can be taken down at any time if there are any issues with it existing.
 
