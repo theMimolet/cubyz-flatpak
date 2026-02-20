@@ -1,24 +1,29 @@
 name: Check for updates
-
 on:
-  schedule:
-  - cron: '0 0 * * *'
-  workflow_dispatch:
+  schedule: # for scheduling to work this file must be in the default branch
+  - cron: "0 0 * * *" # run every day at midnight
+  workflow_dispatch: # can be manually dispatched under GitHub's "Actions" tab
 
 jobs:
-  check-updates:
-    runs-on: ghcr.io/flathub/flatpak-external-data-checker:latest
+  flatpak-external-data-checker:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        branch: [ main ] # list all branches to check
+
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ matrix.branch }}
 
-    - name: Check for updates
-      run: |
-        flatpak-external-data-checker --update io.github.pixelguys.Cubyz.yaml
-
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v5
-      with:
-        commit-message: 'Update to latest upstream release'
-        title: 'Update Cubyz to latest version'
-        body: 'Automated update check found new version'
-        branch: update-bot
+      - uses: docker://ghcr.io/flathub/flatpak-external-data-checker:latest
+        env:
+          GIT_AUTHOR_NAME: Flatpak External Data Checker
+          GIT_COMMITTER_NAME: Flatpak External Data Checker
+          # email sets "github-actions[bot]" as commit author, see https://github.community/t/github-actions-bot-email-address/17204/6
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: --update --never-fork io.github.pixelguys.Cubyz.yaml # e.g. com.organization.myapp.json
