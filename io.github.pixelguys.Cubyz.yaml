@@ -38,7 +38,7 @@ modules:
     x-checker-data:
       type: html
       url: https://github.com/PixelGuys/Cubyz/releases/
-      version-pattern: https://github.com/PixelGuys/Cubyz/releases/download/([\d\.-]*)/Linux-x86_64.tar.gz
+      version-pattern: https://github.com/PixelGuys/Cubyz/releases/download/v?([^/]+)/Linux-x86_64\.tar\.gz
       url-template: https://github.com/PixelGuys/Cubyz/releases/download/${version}/Linux-x86_64.tar.gz
   - type: extra-data
     only-arches: [ aarch64 ]
@@ -49,7 +49,7 @@ modules:
     x-checker-data:
       type: html
       url: https://github.com/PixelGuys/Cubyz/releases/
-      version-pattern: https://github.com/PixelGuys/Cubyz/releases/download/([\d\.-]*)/Linux-aarch64.tar.gz
+      version-pattern: https://github.com/PixelGuys/Cubyz/releases/download/v?([^/]+)/Linux-aarch64\.tar\.gz
       url-template: https://github.com/PixelGuys/Cubyz/releases/download/${version}/Linux-aarch64.tar.gz
   - type: file
     path: io.github.pixelguys.Cubyz.desktop
