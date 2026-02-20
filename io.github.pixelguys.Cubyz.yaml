@@ -36,10 +36,10 @@ modules:
     sha256: d409e15f9596322f5f5e55472acc02f820564bdedf53d7d125da9ae1cb58f11b
     size: 135095841
     x-checker-data:
-      type: html
-      url: https://github.com/PixelGuys/Cubyz/releases/
-      version-pattern: https://github.com/PixelGuys/Cubyz/releases/download/v?([^/]+)/Linux-x86_64\.tar\.gz
-      url-template: https://github.com/PixelGuys/Cubyz/releases/download/${version}/Linux-x86_64.tar.gz
+      type: github-releases
+      repository: PixelGuys/Cubyz
+      tag-pattern: ^([0-9]+(?:\.[0-9]+)*)$
+      asset-pattern: Linux-x86_64\.tar\.gz
   - type: extra-data
     only-arches: [ aarch64 ]
     filename: cubyz.tar.xz
@@ -47,10 +47,10 @@ modules:
     sha256: d316eea69402a5f9433879ab19a065a18225e84e5721635d3053bed6799bda55
     size: 135117948
     x-checker-data:
-      type: html
-      url: https://github.com/PixelGuys/Cubyz/releases/
-      version-pattern: https://github.com/PixelGuys/Cubyz/releases/download/v?([^/]+)/Linux-aarch64\.tar\.gz
-      url-template: https://github.com/PixelGuys/Cubyz/releases/download/${version}/Linux-aarch64.tar.gz
+      type: github-releases
+      repository: PixelGuys/Cubyz
+      tag-pattern: ^([0-9]+(?:\.[0-9]+)*)$
+      asset-pattern: Linux-aarch64\.tar\.gz
   - type: file
     path: io.github.pixelguys.Cubyz.desktop
   - type: file
