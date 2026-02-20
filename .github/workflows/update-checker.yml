@@ -7,19 +7,9 @@ on:
 
 jobs:
   check-updates:
-    runs-on: ubuntu-latest
+    runs-on: ghcr.io/flathub/flatpak-external-data-checker:latest
     steps:
     - uses: actions/checkout@v3
-
-    - name: Set up Flatpak
-      run: |
-        sudo apt update
-        sudo apt install -y flatpak
-        sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-    - name: Install flatpak-external-data-checker
-      run: |
-        flatpak install -y org.flathub.flatpak-external-data-checker
 
     - name: Check for updates
       run: |
