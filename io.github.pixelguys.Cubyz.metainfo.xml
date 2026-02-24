@@ -3,11 +3,9 @@
   <id>io.github.pixelguys.Cubyz</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0</project_license>
+
   <name>Cubyz</name>
   <summary>3D voxel sandbox game</summary>
-  <developer id="io.github.pixelguys">
-    <name translate="no">The Pixel Guys</name>
-  </developer>
   <description>
     <p>
       **NOTE: This wrapper is not verified by, affiliated with, or supported by The Pixel Guys.**
@@ -36,10 +34,21 @@
       </ul>
     </p>
   </description>
+
+  <developer id="io.github.pixelguys">
+    <name translate="no">The Pixel Guys</name>
+  </developer>
+
   <url type="homepage">https://cubyz.net/</url>
+  <url type="vcs-browser">https://github.com/PixelGuys/Cubyz</url>
   <url type="bugtracker">https://github.com/PixelGuys/Cubyz/issues</url>
+  <url type="donation">https://www.patreon.com/cw/Cubyz</url>
+  <url type="contribute">https://github.com/PixelGuys/Cubyz/blob/master/docs/CONTRIBUTING.md</url>
+
+  <icon type="remote" height="448" width="448">https://cubyz.net/cubyz_logo.png</icon>
   <launchable type="desktop-id">io.github.pixelguys.Cubyz.desktop</launchable>
   <content_rating type="oars-1.1" />
+
   <screenshots>
     <screenshot type="default">
       <caption>Sight of a growling volcano</caption>
@@ -54,7 +63,7 @@
       <image type="source">https://cubyz.net/gallery/Screenshot_at_2025-10-23_17-07-31.png</image>
     </screenshot>
   </screenshots>
-  <icon type="remote" height="448" width="448">https://cubyz.net/cubyz_logo.png</icon>
+
   <releases>
     <release date="2026-01-01" version="0.1.1">
       <url type="details">https://github.com/PixelGuys/Cubyz/releases/tag/0.1.1</url>
@@ -85,9 +94,11 @@
       <url type="details">https://github.com/PixelGuys/Cubyz/releases/tag/0.0.0</url>
     </release>
   </releases>
+
   <recommends>
     <control>pointing</control>
     <control>keyboard</control>
     <display_length compare="ge">768</display_length>
   </recommends>
+
 </component>
